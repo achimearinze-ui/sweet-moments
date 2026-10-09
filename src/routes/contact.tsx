@@ -1,0 +1,6 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Intro } from '@/components/site';
+import { EnquiryForm } from '@/components/enquiry-form';
+import { pageHead } from '@/lib/foundation';
+export const Route=createFileRoute('/contact')({validateSearch:(search:Record<string,unknown>)=>({audience:typeof search['audience']==='string'&&['general','partner','volunteer','school','young-person','media','support'].includes(search['audience'])?search['audience']:'general'}),head:()=>pageHead('Contact Us','Contact DS-A Foundation about programmes, school engagement, volunteering, partnerships or media.','/contact'),component:Contact});
+function Contact(){const {audience}=Route.useSearch();return <><Intro eyebrow="Contact Us" title="Every connection can begin something meaningful." description="Get in touch about programmes, school engagement, volunteering, partnerships, media or supporting our work."/><section className="section"><div className="container"><h2 className="section-title">Let’s start a conversation.</h2><p className="body-copy mb-8">Official telephone, email and office address details are awaiting confirmation. You can securely submit an enquiry below.</p><EnquiryForm key={audience} audience={audience}/></div></section></>;}

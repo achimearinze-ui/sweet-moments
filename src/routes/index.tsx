@@ -1,24 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { Users, School, CalendarDays, BookOpen, Sprout, HandHeart, Globe, ArrowRight } from 'lucide-react';
+import { Action, StageCards, Pathways, AudiencePicker, StoryGrid, ConnectBand, leadership, classroom } from '@/components/site';
+import { pageHead } from '@/lib/foundation';
+export const Route=createFileRoute('/')({head:()=>pageHead('Youth Leadership in Nigeria','DS-A Foundation equips young people with values, leadership skills, mentorship and opportunities to create positive change.','/'),component:Index});
+function Index(){return <>
+ <section className="hero"><img className="hero-image" src={leadership} alt="Illustration of a confident student speaking during a youth leadership session" width={1920} height={1024} fetchPriority="high"/><div className="container hero-content"><div className="eyebrow">DS-A Foundation · Leadership From the Cradle</div><h1>Raising Africa’s Next Generation of Ethical, Confident and Transformational Leaders.</h1><p>We equip young people with leadership skills, strong values, mentorship and opportunities to create positive change in their schools and communities.</p><div className="actions"><Action to="/programmes">Explore Our Programmes</Action><Action to="/get-involved" variant="hero">Partner With Us</Action></div></div><span className="image-note">Illustrative artwork · Approved programme photography awaited</span></section>
+ <section className="stat-section"><div className="container"><div className="stats"><div className="stat"><Users/><div><strong>800+</strong><span className="stat-label">Students reached</span><small>Across six schools within two years</small></div></div><div className="stat"><School/><div><strong>6</strong><span className="stat-label">Schools</span><small>During the reported expansion period</small></div></div><div className="stat"><CalendarDays/><div><strong>2022</strong><span className="stat-label">Established</span><small>Rooted in Arochukwu, Nigeria</small></div></div></div><p className="historical-note">A historical programme milestone, not a current cumulative total.</p></div></section>
+ <section className="section"><div className="container split"><div><div className="eyebrow">The challenge. Our response.</div><h2 className="section-title">Every Young Person Deserves the Opportunity to Lead.</h2><p className="body-copy">Many young people face barriers to education, positive mentorship, personal development and opportunities to build the skills needed to lead. We work with schools, families and communities to nurture values, confidence and responsible choices.</p><div className="focus-grid">{[[BookOpen,'Education & school engagement'],[Sprout,'Leadership & values development'],[HandHeart,'Mentorship & personal growth'],[Globe,'Community & advocacy']].map(([Icon,label])=>{const I=Icon as typeof BookOpen;return <div className="focus-item" key={String(label)}><I/><span>{String(label)}</span></div>;})}</div><Action to="/about" variant="green">Discover Our Approach</Action></div><div className="photo-frame"><img src={classroom} alt="Illustration of an educator facilitating a classroom leadership session" width={1280} height={960} loading="lazy"/><span className="image-note">Illustration · Programme photo awaited</span></div></div></section>
+ <section className="section programme-section"><div className="container programme-layout"><div><div className="eyebrow">Our flagship programme</div><h2 className="section-title">Leadership Begins With the Choices We Make.</h2><p className="body-copy">The iLead Youth Leadership Development Programme helps young people explore their values, put them into practice and develop the confidence to influence others positively.</p><Action to="/ilead">Explore the iLead Programme</Action></div><StageCards/></div></section>
+ <section className="impact-band"><img className="hero-image" src={leadership} alt="Illustrative youth leadership classroom scene" width={1920} height={1024} loading="lazy"/><div className="container impact-content"><div><div className="eyebrow">Our growth & impact</div><h2 className="section-title">From One School to a Growing Movement.</h2><p>This growth reflects the opportunity to reach more young people through school engagement and values-based leadership development.</p><Action to="/impact" variant="green">Explore Our Impact</Action></div><div className="timeline"><div className="timeline-item"><strong>2022 · Where it began</strong><p>45 students at Agrey Memorial Secondary School</p></div><div className="timeline-item"><strong>Within two years · A growing community</strong><p>800+ students reached across six schools</p></div></div></div><span className="image-note">Illustrative artwork · Historical milestones</span></section>
+ <section className="section"><div className="container"><div className="eyebrow">How would you like to make a difference?</div><h2 className="section-title">Be Part of a Generation That Leads With Purpose.</h2><p className="body-copy">Lasting change happens when individuals, schools, communities and organisations work together.</p><Pathways/><AudiencePicker/></div></section>
+ <section className="section pt-0"><div className="container"><div className="section-top"><div><div className="eyebrow">Stories & updates</div><h2 className="section-title">Learning, Leadership<br/>and Community.</h2></div><Link to="/media" className="text-link">View All Stories <ArrowRight/></Link></div><StoryGrid/></div></section>
+ <ConnectBand/>
+ </>;}

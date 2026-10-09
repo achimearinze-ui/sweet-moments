@@ -1,0 +1,5 @@
+import { createFileRoute, notFound } from '@tanstack/react-router';
+import { stories, pageHead } from '@/lib/foundation';
+import { Intro, Action } from '@/components/site';
+export const Route=createFileRoute('/stories/$slug')({loader:({params})=>{const story=stories.find(s=>s.slug===params.slug);if(!story)throw notFound();return story;},head:({loaderData})=>pageHead(loaderData?.title??'Story','Editorial placeholder awaiting an approved DS-A Foundation story.',`/stories/${loaderData?.slug??''}`),component:Story});
+function Story(){const story=Route.useLoaderData();return <><Intro eyebrow="Story Space" title={story.title} description={story.summary}/><section className="section"><div className="container max-w-3xl"><span className="status-label">Editorial placeholder · Not a published foundation story</span><p className="body-copy">An approved article, publication date and programme photograph will be added here when supplied. Quotes, identities and images of young people must undergo consent and safeguarding review before publication.</p><Action to="/media" variant="outline">Back to Media Centre</Action></div></section></>;}

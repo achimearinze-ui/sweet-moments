@@ -10,33 +10,232 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DonateRouteImport } from './routes/donate'
+import { Route as GetInvolvedRouteImport } from './routes/get-involved'
+import { Route as GovernanceRouteImport } from './routes/governance'
+import { Route as IleadRouteImport } from './routes/ilead'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProgrammesRouteImport } from './routes/programmes'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SafeguardingRouteImport } from './routes/safeguarding'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as StoriesSlugRouteImport } from './routes/stories.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/donate',
+  path: '/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedRoute = GetInvolvedRouteImport.update({
+  id: '/get-involved',
+  path: '/get-involved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovernanceRoute = GovernanceRouteImport.update({
+  id: '/governance',
+  path: '/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IleadRoute = IleadRouteImport.update({
+  id: '/ilead',
+  path: '/ilead',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgrammesRoute = ProgrammesRouteImport.update({
+  id: '/programmes',
+  path: '/programmes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafeguardingRoute = SafeguardingRouteImport.update({
+  id: '/safeguarding',
+  path: '/safeguarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriesSlugRoute = StoriesSlugRouteImport.update({
+  id: '/stories/$slug',
+  path: '/stories/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/governance': typeof GovernanceRoute
+  '/ilead': typeof IleadRoute
+  '/impact': typeof ImpactRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/programmes': typeof ProgrammesRoute
+  '/resources': typeof ResourcesRoute
+  '/safeguarding': typeof SafeguardingRoute
+  '/terms': typeof TermsRoute
+  '/stories/$slug': typeof StoriesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/governance': typeof GovernanceRoute
+  '/ilead': typeof IleadRoute
+  '/impact': typeof ImpactRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/programmes': typeof ProgrammesRoute
+  '/resources': typeof ResourcesRoute
+  '/safeguarding': typeof SafeguardingRoute
+  '/terms': typeof TermsRoute
+  '/stories/$slug': typeof StoriesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/contact': typeof ContactRoute
+  '/donate': typeof DonateRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/governance': typeof GovernanceRoute
+  '/ilead': typeof IleadRoute
+  '/impact': typeof ImpactRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/programmes': typeof ProgrammesRoute
+  '/resources': typeof ResourcesRoute
+  '/safeguarding': typeof SafeguardingRoute
+  '/terms': typeof TermsRoute
+  '/stories/$slug': typeof StoriesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/contact'
+    | '/donate'
+    | '/get-involved'
+    | '/governance'
+    | '/ilead'
+    | '/impact'
+    | '/media'
+    | '/privacy'
+    | '/programmes'
+    | '/resources'
+    | '/safeguarding'
+    | '/terms'
+    | '/stories/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/contact'
+    | '/donate'
+    | '/get-involved'
+    | '/governance'
+    | '/ilead'
+    | '/impact'
+    | '/media'
+    | '/privacy'
+    | '/programmes'
+    | '/resources'
+    | '/safeguarding'
+    | '/terms'
+    | '/stories/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/contact'
+    | '/donate'
+    | '/get-involved'
+    | '/governance'
+    | '/ilead'
+    | '/impact'
+    | '/media'
+    | '/privacy'
+    | '/programmes'
+    | '/resources'
+    | '/safeguarding'
+    | '/terms'
+    | '/stories/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  ContactRoute: typeof ContactRoute
+  DonateRoute: typeof DonateRoute
+  GetInvolvedRoute: typeof GetInvolvedRoute
+  GovernanceRoute: typeof GovernanceRoute
+  IleadRoute: typeof IleadRoute
+  ImpactRoute: typeof ImpactRoute
+  MediaRoute: typeof MediaRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProgrammesRoute: typeof ProgrammesRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SafeguardingRoute: typeof SafeguardingRoute
+  TermsRoute: typeof TermsRoute
+  StoriesSlugRoute: typeof StoriesSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +247,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donate': {
+      id: '/donate'
+      path: '/donate'
+      fullPath: '/donate'
+      preLoaderRoute: typeof DonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved': {
+      id: '/get-involved'
+      path: '/get-involved'
+      fullPath: '/get-involved'
+      preLoaderRoute: typeof GetInvolvedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/governance': {
+      id: '/governance'
+      path: '/governance'
+      fullPath: '/governance'
+      preLoaderRoute: typeof GovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ilead': {
+      id: '/ilead'
+      path: '/ilead'
+      fullPath: '/ilead'
+      preLoaderRoute: typeof IleadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes': {
+      id: '/programmes'
+      path: '/programmes'
+      fullPath: '/programmes'
+      preLoaderRoute: typeof ProgrammesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safeguarding': {
+      id: '/safeguarding'
+      path: '/safeguarding'
+      fullPath: '/safeguarding'
+      preLoaderRoute: typeof SafeguardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stories/$slug': {
+      id: '/stories/$slug'
+      path: '/stories/$slug'
+      fullPath: '/stories/$slug'
+      preLoaderRoute: typeof StoriesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  ContactRoute: ContactRoute,
+  DonateRoute: DonateRoute,
+  GetInvolvedRoute: GetInvolvedRoute,
+  GovernanceRoute: GovernanceRoute,
+  IleadRoute: IleadRoute,
+  ImpactRoute: ImpactRoute,
+  MediaRoute: MediaRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProgrammesRoute: ProgrammesRoute,
+  ResourcesRoute: ResourcesRoute,
+  SafeguardingRoute: SafeguardingRoute,
+  TermsRoute: TermsRoute,
+  StoriesSlugRoute: StoriesSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

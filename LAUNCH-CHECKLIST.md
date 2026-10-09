@@ -1,0 +1,11 @@
+# Launch dependencies
+- Upload original publicly approved programme photographs. Current classroom artwork is explicitly illustrative, not documentary evidence. The mockup itself is not used as a website image.
+- Supply approved news stories, publication dates, events, videos, reports, resources and newsletters. Current story spaces are clearly unpublished placeholders.
+- Confirm mission, vision, values, founder message, leadership profiles, registration and governance materials.
+- Approve privacy, retention/deletion rules, safeguarding, photography consent, terms, accessibility and complaints policies; supply official contact and safeguarding channels.
+- Connect an approved secure payment provider and confirm donation details. No payment, tax-benefit or financial claims are made.
+- Connect a mailing-list provider and appropriate subscription spam protection. Newsletter form currently states unavailable and never confirms subscription.
+- Enquiries are validated on both client/server and stored privately in Lovable Cloud. Visitor access is insert-only; no public reads. Review enquiries through Cloud. Email notifications are not configured. Honeypot protection is included; consider a managed challenge service before public launch.
+- Content is organised in src/lib/foundation.ts and reusable page modules; replace approved content with CMS-backed public queries in future, with separate authenticated editor permissions.
+- Confirm official social profiles before adding social links.
+- Confirm ownership/configuration of delightsafoundation.com before using the canonical domain publicly. No analytics tracker is active; introduce only after the foundation confirms consent requirements.
